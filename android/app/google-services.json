@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "719115834871",
+    "firebase_url": "https://farm-management-d78be-default-rtdb.firebaseio.com",
+    "project_id": "farm-management-d78be",
+    "storage_bucket": "farm-management-d78be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719115834871:android:0b90840c427aed66de0af2",
+        "android_client_info": {
+          "package_name": "com.example.myfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719115834871-668mvut4dg1rk2apf266u2kqd7r8pipc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsK5FVVjchumzZ0eJG0DjBMmUJIOj_5qU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719115834871-668mvut4dg1rk2apf266u2kqd7r8pipc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
