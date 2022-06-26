@@ -19,7 +19,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final _firestore = FirebaseFirestore.instance;
 
   var ktextStyle = TextStyle(
-    fontSize: 30.0,
+    fontSize: 25.0,
     color: Colors.white,
   );
 
@@ -29,7 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/location_background.jpg'),
+            image: AssetImage('assets/images/appBackground.jpeg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
@@ -96,7 +96,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   var humd;
                   List<Widget> temp = [];
                   for (var message in messages) {
-                    tempVal = message['temp'];
+                    tempVal = message['temp'].toString().substring(0,5);
                     humd = message['humd'];
                   }
                   final textWidget1 = Padding(

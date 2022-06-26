@@ -12,64 +12,15 @@ class _historyScreenState extends State<historyScreen> {
   final _firestore = FirebaseFirestore.instance;
 
   Widget historyData(var temp, var hum, var size, var date) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Container(
-        height: size.height * 0.15,
-        width: size.width,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            color: Colors.black,
-            style: BorderStyle.solid,
-            width: 3.0,
-          ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Temprature : $temp °C",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                  Text(
-                    "Humidity : $hum %",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                  Text(
-                    "Timestamp : $date",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: 25.0),
-                child: Icon(
-                  Icons.health_and_safety,
-                  size: 40.0,
-                ),
-              ),
-            ],
-          ),
-        ),
+    var x = temp.toString().substring(0, 4);
+    var d = date.toString().substring(9, date.toString().length);
+    var t = date.toString().substring(0, 5);
+    return Card(
+      child: ListTile(
+        leading: Icon(Icons.list),
+        title: Text("Time : $t , Date : $d"),
+        subtitle: Text("Temp : $x °C, humidity : $hum %"),
+        trailing: Icon(Icons.info),
       ),
     );
   }
@@ -98,7 +49,7 @@ class _historyScreenState extends State<historyScreen> {
                 var humd = message['humd'];
                 var date = message['timestamp'];
 
-                final d1 = historyData(tempVal, humd, size,date);
+                final d1 = historyData(tempVal, humd, size, date);
                 temp.add(d1);
               }
               return ListView(
